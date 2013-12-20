@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>nl.maartenwinkels.library</groupId>
+    <artifactId>library-security</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>library-security-web</artifactId>
+  <packaging>bundle</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+            <Fragment-Host>nl.maartenwinkels.library.web-bundle;bundle-version=0.0.1.SNAPSHOT</Fragment-Host>
+            <Import-Package>
+              org.springframework.security.provisioning,
+              org.springframework.aop,
+              org.springframework.aop.framework,
+              org.springframework.cglib.core,
+              org.springframework.cglib.proxy,
+              org.springframework.cglib.reflect,
+              org.springframework.web.filter,
+              org.aopalliance.aop,
+              *</Import-Package>
+            <_wab />
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+    </dependency>
+  </dependencies>
+  <name>Library :: Security :: Web</name>
+</project>

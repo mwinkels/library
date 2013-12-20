@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="library">
+<head>
+  <title>Library</title>
+  <script src="js/angular/angular.min.js"></script>
+  <script src="js/underscore/underscore-min.js"></script>
+  <script src="js/angular/restangular.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+<!-- Content -->
+<div ng-controller="BooksCtrl">
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+    </tr>
+    <tr ng-repeat="book in books">
+      <td>{{book.id}}</td>
+      <td>{{book.title}}</td>			
+    </tr>
+  </table>
+  <form>
+  </form>
+</div>
+
+</body>
+</head>
